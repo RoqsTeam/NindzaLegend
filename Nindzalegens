@@ -1,0 +1,144 @@
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
+
+local Window = redzlib:MakeWindow({
+  Title = "Roqs Team : Ninja Legends",
+  SubTitle = "Roqs Team | https://t.me/RoqsScript",
+  SaveFolder = "Roqs Team"
+})
+local Tab1 = Window:MakeTab({"Auto Farn"})
+local Tab2 = Window:MakeTab({"Upgrade"})
+local TPTab = Window:MakeTab({"Tp"})
+
+
+_G.autoTap = true
+_G.autoBaybp = true
+_G.autoBuySword = true
+_G.autoSell = true
+_G.autoUpgrade = true
+
+function autoTap()
+while _G.autoTap == true do
+    local args = {
+    [1] = "swingKatana"
+}
+
+game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
+
+
+
+    wait(.000000000000001)
+ end
+end
+
+
+function autoBaybp()
+while _G.autoBaybp == true do
+    local args = {
+    [1] = "buyAllBelts",
+    [2] = "Ground"
+}
+
+game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
+
+
+
+
+
+    wait(.000000000000001)
+ end
+end
+
+function autoBuySword()
+while _G.autoBuySword == true do
+    local args = {
+    [1] = "buyAllSwords",
+    [2] = "Inner Peace Island"
+}
+
+game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
+
+    
+
+
+
+    wait(.000000000000001)
+ end
+end
+
+function autoSell()
+while _G.autoSell == true do
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(77.557251, 87067.3203, 124.382324, 0.258864343, -0, -0.965913713, 0, 1, -0, 0.965913713, 0, 0.258864343)
+
+
+
+    wait(0.9)
+ end
+end
+
+function autoUpgrade()
+while _G.autoUpgrade == true do
+    local args = {
+    [1] = "buyAllSkills",
+    [2] = "Inner Peace Island"
+}
+
+game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
+
+
+
+    wait(0.09)
+ end
+end
+
+
+
+
+Tab1:AddToggle({
+	Name = "Auto Tap",
+	Default = false,
+	Callback = function(Value)
+		  _G.autoTap = Value
+		  autoTap()
+	end    
+})
+
+Tab1:AddToggle({
+	Name = "Auto Buy Bacpack",
+	Default = false,
+	Callback = function(Value)
+		  _G.autoBaybp = Value
+		  autoBaybp()
+	end    
+})
+
+Tab1:AddToggle({
+	Name = "Auto Buy Swords",
+	Default = false,
+	Callback = function(Value)
+		  _G.autoBuySword = Value
+		  autoBuySword()
+	end    
+})
+
+Tab1:AddToggle({
+	Name = "Auto Sell",
+	Default = false,
+	Callback = function(Value)
+		  _G.autoSell = Value
+		  autoSell()
+	end    
+})
+
+
+Tab2:AddToggle({
+	Name = "Upgrade jump ",
+	Default = false,
+	Callback = function(Value)
+		  _G.autoUpgrade = Value
+		  autoUpgrade()
+	end    
+})
+
+
+
+
